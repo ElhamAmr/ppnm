@@ -1,0 +1,10 @@
+vector3d u = 1 2 3
+vector3d v = 4 5 6
+function call via ivector3d interface: dot(u,u)=14
+function call via ivector3d interface: dot(u,v)=32
+u+v=5 7 9
+u-v=   -3 -3 -3
+u*x =   2 4 6
+hundenumse =  2 4 6
+cross(u,v) =   -3 6 -3
+||u|| =3.74165738677394

@@ -1,0 +1,23 @@
+(A)
+(i)
+my max int = 2147483647
+int.MaxVal = 2147483647
+(ii)
+my min int = -2147483648
+int.MinVal = -2147483648
+(B)
+double = 2.22044604925031E-16
+float = 1.192093E-07
+(C)
+(i)
+float_sum_up=15.40368
+float_sum_down=18.80792
+(ii)
+The floating point type is not precise (it has 7 significant digits). In 'float_sum_up', we start with the largest number and add smaller and smaller values, so more of the significant digits need to be dropped for the smallest added numbers, while in 'float_sum_down' we start with the smallest number and add larger and larger numbers, allowing the least significant decimals to accumulate.
+(iii)
+The sum does not converge.(iv)
+double_sum_up=20.9661659719623
+double_sum_down=20.9661659733582
+The double point type is more precise (it has 15 significant digits) than the float type, and hence, these sums are not as sensitive to the 'direction' in which the numbers are added, however, it does not return identical values.
+(D)
+5 and 5.000124 are equal with absolute or relative precision:false

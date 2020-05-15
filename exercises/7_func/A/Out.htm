@@ -1,0 +1,27 @@
+<meta charset="UTF-8"><pre>
+(A)
+o8av: ∫_0^1 Log(x)/Sqrt(x)dx=-4, acc=1E-05 eps=0
+result = -3.69600317762112, result/exact=0.924000794405279 ncalls=98
+test failed
+
+o8av: testing ∫_-∞^∞ exp(-x^2)dx=1.77245385090552,acc=1E-06,eps=0
+result = 1.77245377955755, result/exact=0.99999995974622 ncalls=160
+test passed
+
+o8av: testing ∫_0^∞ exp(-x^2)dx=0.886226925452758,acc=1E-06,eps=0
+result = 0.886226889778775, result/exact=0.99999995974622 ncalls=80
+test passed
+
+o8av: testing ∫_0^1 ln(1/x)^2 dx=2,acc=1E-06,eps=0
+result = 2.0000004650009, result/exact=1.00000023250045 ncalls=104
+test passed
+
+o8av: testing ∫_0^1 ln(1/x)^3 dx=6,acc=1E-06,eps=0
+result = 6.0000093452743, result/exact=1.00000155754572 ncalls=128
+test failed
+
+o8av: testing ∫_0^1 ln(1/x)^0.5 dx=0.886226925452758,acc=1E-06,eps=0
+result = 0.886227081316132, result/exact=1.00000017587298 ncalls=56
+test passed
+
+failed tests: 2
