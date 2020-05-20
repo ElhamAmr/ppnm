@@ -6,6 +6,7 @@ public gramschmidt(matrix A){
 	for(int i=0;i<m;i++){
 		R[i,i]=Q[i].norm(); //definerer indgangene i diagonalen
 		Q[i]/=R[i,i]; //Q[i]=Q[i]/R[i,i]. vector;
+		
 		//definerer indgange over diagonalen
 		for(int j=i+1;j<m;j++){ //+1 lægges til j i hvert trin, dvs. for i=1 --> j=1+1=2, j=2+1=3, ..
 			R[i,j]=Q[i]%Q[j]; //"%" definerer dot.product af to vektorer og returnerer en skalar

@@ -1,0 +1,24 @@
+Random matrix A:
+
+      7.64       1.13       8.88       7.67 
+      9.54       5.08       5.72        5.8 
+      4.49       8.02       1.67       5.96 
+      6.42       7.98       2.63       3.83 
+Random vector b:
+      9.68       6.27       9.95       9.37 
+The Givens rotation decomposition is stored in the resulting matrix GR, which contains the elements of the component R in the upper triangular part and the angles for the Givens rotations in the relevant sub-diagonal entries:
+GR:
+      14.5       9.94       10.1       11.4 
+     0.895        7.5      -3.61      0.444 
+     0.352        1.2       2.45       3.18 
+     0.458      0.562    -0.0647      -1.67 
+
+Solution to A*x=b using Givens rotations: 
+     -1.63       1.77       2.41     -0.161 
+
+Checking that A^(-1)*A is the identity matrix:
+A^(-1)*A:
+         1          0  -4.44e-16  -3.33e-16 
+         0          1          0   2.22e-16 
+  8.88e-16   8.88e-16          1   4.44e-16 
+ -8.88e-16  -1.78e-15  -6.66e-16          1 
