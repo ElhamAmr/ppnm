@@ -38,6 +38,7 @@ public double integ(double z){/* derivative of the spline at point z */
 	for(int i=0;i<iz;i++){
 		dx=x[i+1]-x[i];
 		p[i]=(y[i+1]-y[i])/dx;
+		//sum+=y[i]*dx+1/2*p[i]*dx*dx;
 		sum+=dx*(y[i]+dx*(p[i])/2);
 		}
 	dx=z-x[iz]; //spørgsmål til her: hvorfor dette skridt, når vi allerede har defineret sum(& dx ovenover)?
