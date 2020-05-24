@@ -15,6 +15,7 @@ class main{
 			}
 			b[i]=10*rand.NextDouble();
 		}
+
 		A.print("Random matrix A:\n"); 
 		b.print("Random vector b:\n");
 
@@ -27,5 +28,14 @@ class main{
 
 		Write("\nChecking that A^(-1)*A is the identity matrix:\n");
 		(GR.inverse()*A).print("A^(-1)*A:");
+
+
+		/*		Write("Checking that A^(-1)*A is the identity matrix:\n");
+		(GR.inverse()*A).printfloat("A^(-1)*A:");
+
+		var C=A*x;
+		C.print("Checking that A*x=b. A*x:\n");
+		if(b.approx(A*x)) Write("A*x=b, test passed\n");
+		else Write("A*x!=b, test failed\n");*/
 	}
 }

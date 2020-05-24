@@ -1,4 +1,4 @@
-all:A.svg B.txt C.svg
+all:A.svg Results.txt C.svg
 
 A.svg: out.txt Makefile
 	#rm fit.log
@@ -32,8 +32,8 @@ C.svg: out.txt Makefile
 	,"$<" index 5 with lines title "c_1-dc_1"\
 	' | gnuplot
 
-out.txt B.txt :main.exe
-	mono $< 1> out.txt 2>B.txt
+out.txt Results.txt :main.exe
+	mono $< 1> out.txt 2>Results.txt
 
 main.exe: main.cs lsfit.cs matlib.dll
 	mcs $(filter-out %.dll,$^) -reference:$(lastword $^)

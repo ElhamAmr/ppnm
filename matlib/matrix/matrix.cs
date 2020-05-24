@@ -213,6 +213,16 @@ public void print(string s="",string format="{0,10:g3} "){
 		}
 	}
 
+/*addition to print with only 3 significant digits*/
+public void printfloat(string s="",string format="{0,10:f3} "){
+	System.Console.WriteLine(s);
+	for(int ir=0;ir<this.size1;ir++){
+	for(int ic=0;ic<this.size2;ic++)
+		System.Console.Write(format,this[ir,ic]);
+		System.Console.WriteLine();
+		}
+	}
+
 public static bool approx(double a, double b, double acc=1e-6, double eps=1e-6){
 	if(Abs(a-b)<acc)return true;
 	if(Abs(a-b)/Max(Abs(a),Abs(b)) < eps)return true;

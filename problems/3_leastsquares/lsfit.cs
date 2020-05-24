@@ -16,8 +16,10 @@ public lsfit(vector x, vector y, vector dy, Func<double,double>[] fs){
 	c=q.solve(b);						//løser systemet 
 
 	var ai=q.inverse();
-	sigma=ai*ai.T;						//eq. (14) i leastsq.pdf
+	sigma=ai*ai.T;						//Covariace-matrix eq. (14) i leastsq.pdf
 	}
+
+
 public double eval(double z){
 	double s=0;
 	for(int i=0;i<f.Length;i++)s+=c[i]*f[i](z); //eq. (5) for at fitte med den samlede linearkombinaton

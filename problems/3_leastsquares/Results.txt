@@ -1,0 +1,13 @@
+Results: 
+
+lambda=-0.17138, dlambda=0.00354
+
+Calculated ThX half-life = 4.0 +- 0.1 days
+Modern value ThX half-life = 3.6319 +- 23 days 
+Source: https://en.wikipedia.org/wiki/Isotopes_of_radium
+Covariance Matrix Σ :
+ 0.000890 -0.000088
+-0.000088 0.000013
+Parameters incl. uncertainties
+4.95866865452411 +- 0.0298375229832803
+-0.171379430616683 +- 0.00353553390593274
