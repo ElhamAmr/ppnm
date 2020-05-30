@@ -1,0 +1,17 @@
+integral_0^1 Sqrt(x) dx, acc=0.001 eps=0.001
+result=0.667438, tolerance=1.667e-003, calls=12
+exact =0.666667, error    =7.714e-004, test passed :)
+
+integral_0^1 1/Sqrt(x) dx, acc=0.001 eps=0.001
+result=1.999516, tolerance=3.000e-003, calls=412
+exact =2.000000, error    =4.839e-004, test passed :)
+
+integral_0^1 4*Sqrt(1-x^2) dx, acc=1E-06 eps=0
+result=3.14159266287232, tolerance=1.000e-006, calls=532
+exact =3.14159265358979, error    =9.283e-009, test passed :)
+
+o8av:
+integral_0^1 4*Sqrt(1-x^2) dx, acc=1E-06 eps=0
+result=3.14159264429694, tolerance=1.000e-006, calls=32
+exact =3.14159265358979, error    =9.293e-009, test passed :)
+

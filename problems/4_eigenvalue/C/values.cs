@@ -58,5 +58,3 @@ for(int p=0;p<nvalues;p++)do{
 return rotations;
 }//values
 }//class
-
-//for den højeste: ændr på vinklen. 
