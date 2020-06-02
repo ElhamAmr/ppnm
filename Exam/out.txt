@@ -1,0 +1,9 @@
+integral_0^1 Sqrt(x) dx, acc=0.001 eps=0.001
+Result:					0.667438
+Exact result:				0.666667
+Deviation from analytical result:	7.714e-004
+Specified tolerance:			1.667e-003
+Number of calls:			12
+error:					7.714e-004,
+ test passed :)
+

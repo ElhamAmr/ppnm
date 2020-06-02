@@ -1,0 +1,37 @@
+integral_0^1 of 1/Sqrt(x) dx, acc=0.001 eps=0.001 [Clenshaw-Curtis]
+Result:					1.999992
+Exact result:				2.000000
+Specified tolerance:			3.000e-003
+Number of calls:			16
+error:					7.990e-006,
+ test passed :)
+The result deviates 7.990e-006 from the exact solution with 16 evaluations
+
+integral_0^1 of 1/Sqrt(x) dx, acc=0.001 eps=0.001 [adaptive]
+Result:					1.999516
+Exact result:				2.000000
+Specified tolerance:			3.000e-003
+Number of calls:			400
+error:					4.839e-004,
+ test passed :)
+The result deviates 4.839e-004 from the exact solution with 400 evaluations
+
+integral_0^1 of Ln(x)/Sqrt(x) dx, acc=0.001 eps=0.001 [Clenshaw-Curtis]
+Result:					-3.999755
+Exact result:				-4.000000
+Specified tolerance:			5.000e-003
+Number of calls:			80
+error:					2.451e-004,
+ test passed :)
+The result deviates 2.451e-004 from the exact solution with 80 evaluations
+
+integral_0^1 of Ln(x)/Sqrt(x) dx, acc=0.001 eps=0.001 [adaptive]
+Result:					-3.999790
+Exact result:				-4.000000
+Specified tolerance:			5.000e-003
+Number of calls:			792
+error:					2.099e-004,
+ test passed :)
+The result deviates 2.099e-004 from the exact solution with 792 evaluations
+
+CONCLUSION: The Clenshaw-Curtis transformation clearly reduces the number of recursive calls without significantly increasing the error.

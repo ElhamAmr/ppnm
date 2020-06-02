@@ -1,0 +1,33 @@
+integral_-∞ ^∞ of 1/1+x² dx, acc=0.001 eps=0.001
+Result:					3.141745
+Exact result:				3.141593
+Specified tolerance:			4.142e-003
+Number of calls:			48
+error:					1.521e-004,
+ test passed :)
+The result deviates 1.521e-004 from the exact solution with 48 evaluations
+Comparing to 'o8.av'
+The result from 'o8.av' is 3.140967, with 32 recursive calls and error =6.257e-004
+
+integral_1 ^∞ of 1/x² dx, acc=0.001 eps=0.001
+Result:					1.000000
+Exact result:				1.000000
+Specified tolerance:			2.000e-003
+Number of calls:			4
+error:					1.110e-016,
+ test passed :)
+The result deviates 1.110e-016 from the exact solution with 4 evaluations
+Comparing to 'o8.av'
+The result from 'o8.av' is 1.000000, with 8 recursive calls and error =2.220e-016
+
+integral_-∞ ^0 of 0.5*x*exp(x) dx, acc=0.001 eps=0.001
+Result:					-0.999990
+Exact result:				-1.000000
+Specified tolerance:			2.000e-003
+Number of calls:			44
+error:					1.048e-005,
+ test passed :)
+The result deviates 1.048e-005 from the exact solution with 44 evaluations
+Comparing to 'o8.av'
+The result from 'o8.av' is -1.001126, with 24 recursive calls and error =1.126e-003
+

@@ -1,0 +1,28 @@
+integral_0^1 of 4*Sqrt(1-x²)dx, acc=0.001 eps=0.001 [Clenshaw-Curtis]
+Result:					3.141572
+Exact result:				3.141593
+Specified tolerance:			4.142e-003
+Number of calls:			36
+error:					2.032e-005,
+ test passed :)
+The result deviates 2.032e-005 from the exact solution with 36 evaluations
+
+integral_0^1 of 4*Sqrt(1-x²)dx, acc=0.001 eps=0.001 [adaptive]
+Result:					3.141835
+Exact result:				3.141593
+Specified tolerance:			4.142e-003
+Number of calls:			28
+error:					2.419e-004,
+ test passed :)
+The result deviates 2.419e-004 from the exact solution with 28 evaluations
+
+integral_0^1 of 4*Sqrt(1-x²)dx, acc=0.001 eps=0.001 [o8.av]
+Result:					3.141323
+Exact result:				3.141593
+Specified tolerance:			4.141e-003
+Number of calls:			8
+error:					2.697e-004,
+ test passed :)
+
+The result deviates 2.697e-004 from the exact solution with 8 evaluations.
+ The result from 'o8.av' is much faster in terms of evaluations but is not as accurate as the Clenshaw-Curtis transformation. Though this can be fixed by adjusting the parameters for acc and eps.

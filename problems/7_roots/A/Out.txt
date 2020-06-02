@@ -1,0 +1,9 @@
+
+Newton's method:
+Looking for extremum of Rosenbrock function starting at:       1.5        0.7 
+Evaluations: 					620
+Found extremum:				         1          1 
+Function at extremum points:			  1.96e-07     -9e-08 
+Reqested accuracy:				0.0001
+Norm of derivative at root:			2.1548983612466E-07
+test passed :)

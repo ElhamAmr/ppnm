@@ -1,22 +1,19 @@
-all: out.logB.txt B.PiAccuracy.svg
-	cat out.logB.txt
+all: Out.txt outB2.txt
 
-B.PiAccuracy.svg: plotB.gpi out.PIAccuracy.txt
-	gnuplot $<
+Out.txt:main.exe
+	mono $< 1> Out.txt
 
-out.logB.txt out.PIAccuracy.txt: mainB.exe
-	mono $< 1> out.logB.txt
+outB2.txt: main.exe
+	mono $< 1> outB2.txt
 
-mainB.exe: mainB.cs math.dll
-	mcs -out:$@ -reference:math.dll $<
+main.exe:main.cs matlib.dll
+	mcs $(filter %.cs,$^) -reference:$(filter %.dll,$^)
 
-MATLIB = integrator.cs $(HOME)/Documents/Repository/ppnm/matlib
-SRC := $(MATLIB)/matrix/vector.cs
-SRC += $(MATLIB)/integration/quado8.cs
 
-math.dll: $(SRC)
-	mcs -target:library -out:$@ $^
+LIBDIR = ../A
+SCR := $(HOME)/Documents/Repository/ppnm/matlib/integration/quado8.cs
+matlib.dll: CC.cs $(LIBDIR)/quad.cs $(SCR)
+	mcs $^ -target:library -out:$@
 
-.PHONY:clean
 clean:
-	rm -f *.dll out.*.txt *.exe *.svg
+	$(RM) *.dll *.exe [Oo]ut* [Ll]og*

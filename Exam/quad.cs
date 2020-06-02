@@ -1,8 +1,13 @@
+/*Exam project #10: 
+Adaptive integrator with subdivision into three subintervals :
+Implement a (one-dimensional) adaptive integrator which at each iteration 
+subdivides the interval not into two, but into three sub-intervals. */
+
 using System;
 using static System.Math;
 using static System.Double;
 public static partial class quad{
-public static double adapt4(										// recursiv funktion, der kalder på sig selv igen og igen indtil den når limit/eller når et accurat resultat. 
+public static double adaptint(										// recursiv funktion, der kalder på sig selv igen og igen indtil den når limit/eller når et accurat resultat. 
 
 	Func<double,double> f,double a,double b,
 	double acc=1e-3, double eps=1e-3, int limit=99,
@@ -23,8 +28,8 @@ public static double adapt4(										// recursiv funktion, der kalder på sig s
 		return Q;
 		}
 	else{
-		double Q1=adapt4(f,a,(a+b)/2,acc/Sqrt(2),eps,limit-1,f1,f2);// vi opsplitter det i en ny, aka. Q1 & Q2
-		double Q2=adapt4(f,(a+b)/2,b,acc/Sqrt(2),eps,limit-1,f3,f4);// husk det rekursive træ
+		double Q1=adaptint(f,a,(a+b)/2,acc/Sqrt(2),eps,limit-1,f1,f2);// vi opsplitter det i en ny, aka. Q1 & Q2
+		double Q2=adaptint(f,(a+b)/2,b,acc/Sqrt(2),eps,limit-1,f3,f4);// husk det rekursive træ
 		return Q1+Q2;
 		}
 }//adapt4

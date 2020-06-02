@@ -1,4 +1,4 @@
-LIBDIR=$(HOME)/public_html/prog/matlib
+LIBDIR=$(HOME)/Documents/Repository/ppnm/matlib
 LIBSRC=\
 	$(LIBDIR)/matrix/vector.cs\
 	$(LIBDIR)/matrix/matrix.cs\
@@ -14,7 +14,8 @@ main.exe:main.cs roots.dll matlib.dll
 matlib.dll:$(LIBSRC)
 	mcs $^ -target:library -out:$@
 
-roots.dll:jacobian.cs newton.cs broyden.cs matlib.dll
+SRC := $(HOME)/Documents/Repository/ppnm/matlib/roots/bak
+roots.dll:$(SRC)/jacobian.cs $(SRC)/newton.cs matlib.dll
 	src="$(filter %.cs,$^)"; libs="$(call clist,$(filter %.dll,$^))";\
 	mcs $$src -t:library -r:$$libs -out:$@
 
