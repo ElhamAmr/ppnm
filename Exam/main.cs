@@ -14,7 +14,7 @@ static void Main(){
 	{
 	Func<double,double> f=delegate(double x){calls++;return Sqrt(x);};
 	WriteLine($"integral_{a}^{b} Sqrt(x) dx, acc={acc} eps={eps}");
-	double exact=2.0/3;
+	double exact=2.0/3.0;
 	double Q=quad.adaptint(f,a,b,acc,eps);
 	double aerr=Abs(Q-exact),tol=acc+eps*Abs(Q);
 	Write($"Result:					{Q:f6}\n");

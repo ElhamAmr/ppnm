@@ -11,16 +11,17 @@ public static double adaptint(										// recursiv funktion, der kalder på sig
 
 	Func<double,double> f,double a,double b,
 	double acc=1e-3, double eps=1e-3, int limit=99,
-	double f2=NaN, double f3=NaN 									// genbruger punkterne f2 og f3 fra tidligere, og hvis ikke der er et punkt (dvs. NaN), så har vi defineret, hvordan de skal regnes ud. 
+	double f2=NaN		 											// genbruger punkterne f2 og f3 fra tidligere, og hvis ikke der er et punkt (dvs. NaN), så har vi defineret, hvordan de skal regnes ud. 
 	){
-	double f1=f(a+(b-a)/6), f4=f(a+5*(b-a)/6);						// eq. (48)&(51) - definerer f(x1), f(x2),..
-	if( IsNaN(f2) ){ f2=f(a+2*(b-a)/6); f3=f(a+4*(b-a)/6);}
-	double Q=(2*f1+f2+f3+2*f4)/6*(b-a);								// trapezium rule eq.(49) in pdf
-	double q=(f1+f2+f3+f4)/4*(b-a);									// rectangle rule eq.(50) in pdf
+	double f1=f(a+(b-a)/6), f3=f(a+5*(b-a)/6);						// eq. (48)&(51) - definerer f(x1), f(x2),..
+	if( IsNaN(f2) ){ f2=f(a+3*(b-a)/6); }
+
+	double Q=(3*f1+2*f2+3*f3)/8*(b-a);								// trapezium rule eq.(49) in pdf
+	double q=(f1+f2+f3)/3*(b-a);									// rectangle rule eq.(50) in pdf
 	double err=Abs(Q-q)/Sqrt(2);									// rescaled absolute accuracy goal: d/sqrt(2)
 
 	if(limit==0){
-		//Console.Error.WriteLine($"adapt: limit reached: a={a} b={b}");
+		Console.Error.WriteLine($"adapt: limit reached: a={a} b={b}");
 		return Q;
 		}
 
@@ -28,9 +29,12 @@ public static double adaptint(										// recursiv funktion, der kalder på sig
 		return Q;
 		}
 	else{
-		double Q1=adaptint(f,a,(a+b)/2,acc/Sqrt(2),eps,limit-1,f1,f2);// vi opsplitter det i en ny, aka. Q1 & Q2
-		double Q2=adaptint(f,(a+b)/2,b,acc/Sqrt(2),eps,limit-1,f3,f4);// husk det rekursive træ
-		return Q1+Q2;
+		double Q1=adaptint(f,a,a+(b-a)/2,acc/Sqrt(2),eps,limit-1,f1);// vi opsplitter det i en ny, aka. Q1 & Q2
+		double Q2=adaptint(f,a+(b-a)/2,a+2*(b-a)/2,acc/Sqrt(2),eps,limit-1,f2);// husk det rekursive træ
+		double Q3=adaptint(f,a+2*(b-a)/2,b,acc/Sqrt(2),eps,limit-1,f3);
+		return Q1+Q2+Q3;
 		}
 }//adapt4
+
+
 }//quad
