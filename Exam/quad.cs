@@ -14,14 +14,15 @@ public static double adaptint(										// recursiv funktion, der kalder på sig
 	double f2=NaN		 											// genbruger punkt f2 og hvis ikke der er et punkt (dvs. NaN), så har vi defineret, hvordan de skal regnes ud. 
 	){
 	double f1=f(a+(b-a)/6), f3=f(a+5*(b-a)/6);						// x_i = 1/6{1,3,5}   w_i = 1/8{3,2,3} v_i = 1/3{1,1,1}
-	if( IsNaN(f2) ){ f2=f(a+3*(b-a)/6); }
+	
+	if( IsNaN(f2) ){ f2=f(a+3*(b-a)/6); } //måske ligger fejlen i præcision her.. 
 
 	double Q=(3*f1+2*f2+3*f3)/8*(b-a);								// higher order quadrature for subdivision into three subintervals
 	double q=(f1+f2+f3)/3*(b-a);									// lower order quadrature for subdivision into three subintervals
 	double err=Abs(Q-q)/Sqrt(2);									// rescaled absolute accuracy goal: d/sqrt(2)
 
 	if(limit==0){
-		Console.Error.WriteLine($"adapt: limit reached: a={a} b={b}");
+		//Console.Error.WriteLine($"adapt: limit reached: a={a} b={b}"); //Behøves ikke
 		return Q;
 		}
 

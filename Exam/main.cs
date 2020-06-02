@@ -27,5 +27,21 @@ static void Main(){
 	else WriteLine("TEST FAILED :(\n");
 	}
 
+
+	{
+	Func<double,double> f=delegate(double x){calls++;return Log(x)/Sqrt(x);};
+	WriteLine($"integral_{a}^{b} Ln(x)/sqrt(x) dx, acc={acc} eps={eps}");
+	double exact=-4;
+	double Q=quad.adaptint(f,a,b,acc,eps);
+	double aerr=Abs(Q-exact),tol=acc+eps*Abs(Q);
+	Write($"Result:					{Q:f6}\n");
+	Write($"Exact result:				{exact:f6}\n");
+	Write($"Deviation from analytical result:	{Q-exact:e3}\n");
+	Write($"Specified tolerance:			{tol :e3}\n");
+	Write($"Number of calls:			{calls}\n");
+	Write($"error:					{aerr:e3},\n ");
+	if(aerr<tol)WriteLine("test passed :)\n");
+	else WriteLine("TEST FAILED :(\n");
+	}
 }
 }
