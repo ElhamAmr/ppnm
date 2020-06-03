@@ -23,8 +23,8 @@ static void Main(){
 	Write($"Specified tolerance:			{tol :e3}\n");
 	Write($"Number of calls:			{calls}\n");
 	Write($"error:					{aerr:e3},\n ");
-	if(aerr<tol)WriteLine("test passed :)\n");
-	else WriteLine("TEST FAILED :(\n");
+	if(aerr<tol)WriteLine("test passed \n");
+	else WriteLine("TEST FAILED \n");
 	}
 
 
@@ -40,8 +40,8 @@ static void Main(){
 	Write($"Specified tolerance:			{tol :e3}\n");
 	Write($"Number of calls:			{calls}\n");
 	Write($"error:					{aerr:e3},\n ");
-	if(aerr<tol)WriteLine("test passed :)\n");
-	else WriteLine("TEST FAILED :(\n");
+	if(aerr<tol)WriteLine("test passed \n");
+	else WriteLine("TEST FAILED \n");
 	}
 }
 }

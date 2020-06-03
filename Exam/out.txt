@@ -5,7 +5,7 @@ Deviation from analytical result:	-4.863e-003
 Specified tolerance:			1.662e-003
 Number of calls:			141
 error:					4.863e-003,
- TEST FAILED :(
+ TEST FAILED 
 
 integral_0^1 Ln(x)/sqrt(x) dx, acc=0.001 eps=0.001
 Result:					-4.022457
@@ -14,5 +14,5 @@ Deviation from analytical result:	-2.246e-002
 Specified tolerance:			5.022e-003
 Number of calls:			18564
 error:					2.246e-002,
- TEST FAILED :(
+ TEST FAILED 
 

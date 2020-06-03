@@ -18,12 +18,12 @@ public static double adaptint(										// recursiv funktion, der kalder på sig
 		if(IsNaN(f2)){ 												// isNaN Returns a value that indicates whether the specified value is not a number
 			f2=f(a+3*(b-a)/6);} //måske ligger fejlen i præcision her.. 
 
-	double Q=((3*f1+2*f2+3*f3)/8)*(b-a);								// higher order quadrature for subdivision into three subintervals
-	double q=((f1+f2+f3)/3)*(b-a);									// lower order quadrature for subdivision into three subintervals
+	double Q=(3*f1+2*f2+3*f3)/8*(b-a);								// higher order quadrature for subdivision into three subintervals
+	double q=(f1+f2+f3)/3*(b-a);									// lower order quadrature for subdivision into three subintervals
 	double err=Abs(Q-q)/Sqrt(2);									// rescaled absolute accuracy goal: d/sqrt(2)
 
 		if(limit==0){
-			Console.Error.WriteLine($"adapt: limit reached: a={a} b={b}"); //Behøves ikke
+			//Console.Error.WriteLine($"adapt: limit reached: a={a} b={b}"); //Behøves ikke
 			return Q;
 			}
 
