@@ -5,7 +5,7 @@ Out.txt:main.exe
 main.exe:main.cs qnewton.dll matlib.dll
 	mcs $< -r:$(call clist,$(filter %.dll,$^))
 
-LIBDIR=$(HOME)/public_html/prog/matlib
+LIBDIR=$(HOME)/Documents/Repository/ppnm/matlib
 LIBSRC=\
 	$(LIBDIR)/matrix/vector.cs\
 	$(LIBDIR)/matrix/matrix.cs

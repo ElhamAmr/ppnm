@@ -47,7 +47,7 @@ while(size(p)>dx && ++nsteps<maxsteps){
 			f[hi]=fex;
 			continue;
 		}
-		else{ /* just goog */
+		else{ /* just good */
 			Error.Write("reflection\n");
 			p[hi]=pre;
 			f[hi]=fre;

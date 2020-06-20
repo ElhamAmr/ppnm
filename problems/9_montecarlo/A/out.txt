@@ -1,0 +1,15 @@
+Integral: ∫_0^2π sin(x)^2 dx
+result= 3.18306878279268
+exact = 3.14159265358979
+error = 0.0222187863143905
+
+Integral: ∫_0^π dx/π ∫_0^π dy/π ∫_0^π dz/π 1/(1-cos(x)*cos(y)*cos(z)
+result= 1.40514875005349
+exact = 1.39320392968568
+error = 0.0196175236743405
+
+Integral: ∫_0^2π Ln(1/x) dx
+result= 0.992396925656766
+exact = 1
+error = 0.00975749858920279
+

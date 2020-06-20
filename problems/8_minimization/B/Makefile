@@ -4,18 +4,18 @@ Plot.svg: plot.data Makefile
 	set title 'Higgs production signal';\
 	set xlabel 'Energy [GeV]';\
 	set ylabel 'Signal [arb.u.]';\
-	plot 'higgs.data' using 1:2:3 with errorbars title 'exp'\
+	plot 'higgs.txt' using 1:2:3 with errorbars title 'exp'\
 	, '$<' using 1:2 with lines title 'fit' ;\
 	" > $@
 
 plot.data:main.exe
-	mono $< <higgs.data 1>Log 2>$@
+	mono $< <higgs.txt 1>Log 2>$@
 
 main.exe:main.cs qnewton.dll matlib.dll
 	src="$(filter %.cs,$^)"; libs="$(call clist,$(filter %.dll,$^))";\
 	mcs $$src -t:exe -r:$$libs -out:$@
 
-LIBDIR=$(HOME)/public_html/prog/matlib
+LIBDIR=$(HOME)/Documents/Repository/ppnm/matlib
 LIBSRC=\
 	$(LIBDIR)/matrix/vector.cs\
 	$(LIBDIR)/matrix/matrix.cs

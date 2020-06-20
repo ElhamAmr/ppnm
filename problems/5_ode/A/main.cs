@@ -20,7 +20,7 @@ static void Main(){
 	double a=0;
 	vector ya=new vector(0,1);
 	double b=2.25*PI;
-	double h=0.1,acc=1e-3,eps=1e-3;
+	double h=1.5,acc=1e-3,eps=1e-3;
 	var xs=new List<double>();
 	var ys=new List<vector>();
 

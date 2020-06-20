@@ -9,7 +9,7 @@ using static System.Console;
 class main{
 static void Main(){
 	int calls=0;
-	double a=0,b=1,acc=1e-3,eps=1e-3;
+	double a=0,b=1,acc=1e-6,eps=1e-6;
 
 	{
 	Func<double,double> f=delegate(double x){calls++;return Sqrt(x);};
@@ -19,11 +19,10 @@ static void Main(){
 	double aerr=Abs(Q-exact),tol=acc+eps*Abs(Q);
 	Write($"Result:					{Q:f6}\n");
 	Write($"Exact result:				{exact:f6}\n");
-	Write($"Deviation from analytical result:	{Q-exact:e3}\n");
-	Write($"Specified tolerance:			{tol :e3}\n");
+	Write($"Specified tolerance:			{tol :e6}\n");
+	Write($"Error:					{aerr:e6}\n ");
 	Write($"Number of calls:			{calls}\n");
-	Write($"error:					{aerr:e3},\n ");
-	if(aerr<tol)WriteLine("test passed \n");
+	if(aerr<tol)WriteLine("TEST PASSED \n");
 	else WriteLine("TEST FAILED \n");
 	}
 
@@ -36,11 +35,26 @@ static void Main(){
 	double aerr=Abs(Q-exact),tol=acc+eps*Abs(Q);
 	Write($"Result:					{Q:f6}\n");
 	Write($"Exact result:				{exact:f6}\n");
-	Write($"Deviation from analytical result:	{Q-exact:e3}\n");
-	Write($"Specified tolerance:			{tol :e3}\n");
+	Write($"Specified tolerance:			{tol :e6}\n");
+	Write($"Error:					{aerr:e6}\n ");
 	Write($"Number of calls:			{calls}\n");
-	Write($"error:					{aerr:e3},\n ");
-	if(aerr<tol)WriteLine("test passed \n");
+	if(aerr<tol)WriteLine("TEST PASSED \n");
+	else WriteLine("TEST FAILED \n");
+	}
+
+	{
+	double a1=0, b1=PI;
+	Func<double,double> f=delegate(double x){calls++;return Sin(x);};
+	WriteLine($"integral_{a1}^{b1} Sin(x) dx, acc={acc} eps={eps}");
+	double exact=2;
+	double Q=quad.adaptint(f,a1,b1,acc,eps);
+	double aerr=Abs(Q-exact),tol=acc+eps*Abs(Q);
+	Write($"Result:					{Q:f6}\n");
+	Write($"Exact result:				{exact:f6}\n");
+	Write($"Specified tolerance:			{tol :e6}\n");
+	Write($"Error:					{aerr:e6}\n ");
+	Write($"Number of calls:			{calls}\n");
+	if(aerr<tol)WriteLine("TEST PASSED \n");
 	else WriteLine("TEST FAILED \n");
 	}
 }

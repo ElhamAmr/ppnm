@@ -6,8 +6,7 @@ using System.Collections.Generic;
 
 public partial class ode{
 
-public static vector rk23
-(
+public static vector rk23(
 	Func<double,vector,vector> F, /* equation */
 	double a, vector ya, /* initial condition: {a,y(a)} */
 	double b, 

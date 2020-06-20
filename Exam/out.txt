@@ -1,18 +1,24 @@
-integral_0^1 Sqrt(x) dx, acc=0.001 eps=0.001
-Result:					0.661803
+integral_0^1 Sqrt(x) dx, acc=1E-06 eps=1E-06
+Result:					0.666667
 Exact result:				0.666667
-Deviation from analytical result:	-4.863e-003
-Specified tolerance:			1.662e-003
-Number of calls:			141
-error:					4.863e-003,
- TEST FAILED 
+Specified tolerance:			1.666667e-006
+Error:					7.569049e-008
+ Number of calls:			147
+TEST PASSED 
 
-integral_0^1 Ln(x)/sqrt(x) dx, acc=0.001 eps=0.001
-Result:					-4.022457
+integral_0^1 Ln(x)/sqrt(x) dx, acc=1E-06 eps=1E-06
+Result:					-4.000000
 Exact result:				-4.000000
-Deviation from analytical result:	-2.246e-002
-Specified tolerance:			5.022e-003
-Number of calls:			18564
-error:					2.246e-002,
- TEST FAILED 
+Specified tolerance:			5.000000e-006
+Error:					4.372231e-009
+ Number of calls:			3912
+TEST PASSED 
+
+integral_0^3.14159265358979 Sin(x) dx, acc=1E-06 eps=1E-06
+Result:					2.000000
+Exact result:				2.000000
+Specified tolerance:			3.000000e-006
+Error:					9.418446e-010
+ Number of calls:			4143
+TEST PASSED 
 
