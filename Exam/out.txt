@@ -1,3 +1,6 @@
+Results from adaptive integrator with subdivision into three subintervals: 
+
+
 integral_0^1 Sqrt(x) dx, acc=1E-06 eps=1E-06
 Result:					0.666667
 Exact result:				0.666667

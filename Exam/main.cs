@@ -10,7 +10,7 @@ class main{
 static void Main(){
 	int calls=0;
 	double a=0,b=1,acc=1e-6,eps=1e-6;
-
+	WriteLine("Results from adaptive integrator with subdivision into three subintervals: \n\n");
 	{
 	Func<double,double> f=delegate(double x){calls++;return Sqrt(x);};
 	WriteLine($"integral_{a}^{b} Sqrt(x) dx, acc={acc} eps={eps}");
